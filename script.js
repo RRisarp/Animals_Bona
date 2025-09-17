@@ -10,6 +10,9 @@ function draKort() {
   const bildFil = bilder[slumpIndex];
   const djurnamn = bildFil.substring(0, bildFil.lastIndexOf('.')).replace(/_/g, ' ');
 
-  document.getElementById("kortbild").src = "kort/" + bildFil;
+  const bildElement = document.getElementById("kortbild");
+  bildElement.src = "kort/" + bildFil;
+  bildElement.style.display = "block";
+
   document.getElementById("djurnamn").textContent = djurnamn.charAt(0).toUpperCase() + djurnamn.slice(1);
 }
